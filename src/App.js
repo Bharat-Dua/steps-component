@@ -11,7 +11,7 @@ function App() {
 
   function handlerNext() {
     if (step < messages.length) {
-      setStep(step + 1);
+      setStep((s) => s + 1);
     } else {
       setStep(1);
     }
@@ -21,12 +21,12 @@ function App() {
   }
   function handlerPrevious() {
     if (step > 1) {
-      setStep(step - 1);
+      setStep((s) => s - 1);
     }
   }
   return (
     <>
-      <button className="close" onClick={() => setIsOpen(!isOpen)}>
+      <button className="close" onClick={() => setIsOpen((is) => !is)}>
         &times;
       </button>
       {isOpen && (
